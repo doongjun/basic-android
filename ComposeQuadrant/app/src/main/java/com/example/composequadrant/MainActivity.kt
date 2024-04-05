@@ -7,8 +7,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting()
+                    ComposeQuadrantApp(modifier = Modifier.fillMaxWidth())
                 }
             }
         }
@@ -41,70 +41,62 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(modifier: Modifier = Modifier) {
+fun ComposeQuadrantApp(modifier: Modifier = Modifier) {
     Column(modifier) {
         Row(
-            modifier = Modifier.weight(0.5f)
+            modifier = Modifier.weight(1f)
         ) {
             Card(
                 title = "Text composable",
                 content = "Displays text and follows the recommended Material Design guidelines.",
-                modifier = Modifier.weight(0.5f)
-                    .fillMaxHeight()
-                    .background(Color(0xFFEADDFF))
+                backgroundColor = Color(0xFFEADDFF),
+                modifier = Modifier.weight(1f)
             )
             Card(
                 title = "Image composable",
                 content = "Creates a composable that lays out and draws a given Painter class object.",
-                modifier = Modifier.weight(0.5f)
-                    .fillMaxHeight()
-                    .background(Color(0xFFD0BCFF))
+                backgroundColor = Color(0xFFD0BCFF),
+                modifier = Modifier.weight(1f)
             )
         }
         Row(
-            modifier = Modifier.weight(0.5f)
+            modifier = Modifier.weight(1f)
         ) {
             Card(
                 title = "Row composable",
                 content = "A layout composable that places its children in a horizontal sequence.",
-                modifier = Modifier.weight(0.5f)
-                    .fillMaxHeight()
-                    .background(Color(0xFFB69DF8))
+                backgroundColor = Color(0xFFB69DF8),
+                modifier = Modifier.weight(1f)
             )
             Card(
                 title = "Column composable",
                 content = "A layout composable that places its children in a vertical sequence.",
-                modifier = Modifier.weight(0.5f)
-                    .fillMaxHeight()
-                    .background(Color(0xFFF6EDFF))
+                backgroundColor = Color(0xFFF6EDFF),
+                modifier = Modifier.weight(1f)
             )
         }
     }
 }
 
 @Composable
-fun Card(title: String, content: String, modifier: Modifier) {
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center,
+fun Card(title: String, content: String, backgroundColor: Color, modifier: Modifier = Modifier) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
+            .fillMaxSize()
+            .background(backgroundColor)
+            .padding(16.dp)
     ) {
-        Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                text = title,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Justify,
-                modifier = Modifier.padding(bottom = 16.dp)
-            )
-            Text(
-                text = content,
-                textAlign = TextAlign.Justify,
-            )
-        }
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(bottom = 16.dp)
+        )
+        Text(
+            text = content,
+            textAlign = TextAlign.Justify,
+        )
     }
 }
 
@@ -112,6 +104,6 @@ fun Card(title: String, content: String, modifier: Modifier) {
 @Composable
 fun GreetingPreview() {
     ComposeQuadrantTheme {
-        Greeting()
+        ComposeQuadrantApp(modifier = Modifier.fillMaxWidth())
     }
 }
