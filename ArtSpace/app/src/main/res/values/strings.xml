@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ArtSpace</string>
+    <string name="android_image_description">Android</string>
+    <string name="android_title">Android</string>
+    <string name="android_description">Android</string>
+    <string name="android_year">2024</string>
+
+    <string name="arsenal_image_description">Arsenal</string>
+    <string name="arsenal_title">Arsenal</string>
+    <string name="arsenal_description">Arsenal</string>
+    <string name="arsenal_year">2024</string>
+
+    <string name="arsenal_fc_image_description">Arsenal FC</string>
+    <string name="arsenal_fc_title">Arsenal FC</string>
+    <string name="arsenal_fc_description">Arsenal FC</string>
+    <string name="arsenal_fc_year">2024</string>
+
+    <string name="aws_image_description">AWS</string>
+    <string name="aws_title">AWS</string>
+    <string name="aws_description">AWS</string>
+    <string name="aws_year">2024</string>
+
+    <string name="bukayo_image_description">Bukayo</string>
+    <string name="bukayo_title">Bukayo</string>
+    <string name="bukayo_description">Bukayo</string>
+    <string name="bukayo_year">2024</string>
+
+    <string name="horse_image_description">Horse</string>
+    <string name="horse_title">Horse</string>
+    <string name="horse_description">Horse</string>
+    <string name="horse_year">2024</string>
+
+    <string name="purpleworks_image_description">Purpleworks</string>
+    <string name="purpleworks_title">Purpleworks</string>
+    <string name="purpleworks_description">Purpleworks</string>
+    <string name="purpleworks_year">2024</string>
+</resources>
